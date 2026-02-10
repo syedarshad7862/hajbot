@@ -19,7 +19,7 @@ const generateToken = (user) => {
 
 // API to register user
 export const registerUser = async (req,res) => {
-    const {name,email, password, agencyName, contactNumber} = req.body
+    const {name,email, password,contactNumber} = req.body
 
     try {
         const userExists = await Profile.findOne({email})
@@ -27,7 +27,7 @@ export const registerUser = async (req,res) => {
             return res.json({success: false, message: "User already exists"})
         }
 
-        const user = Profile.create({name,email,password, agencyName,contactNumber})
+        const user = Profile.create({name,email,password,contactNumber})
 
         const token = generateToken(user)
         

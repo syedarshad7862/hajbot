@@ -33,8 +33,8 @@ app.use("/api/chat", chatRouter)
 app.use("/api/admin", adminRouter)
 
 
-// app.listen(port, () => {
-//     console.log(`Example app running on port: ${port}`);
+app.listen(port, () => {
+    console.log(`Example app running on port: ${port}`);
     
-// })
-export default app;
+})
+// export default app;
